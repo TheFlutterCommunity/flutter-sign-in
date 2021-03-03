@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splash_signin/widgets/curve_painter.dart';
-
+import 'package:flutter_sign_in/routes/routes.dart';
+import 'package:flutter_sign_in/widgets/curve_painter.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -30,28 +30,28 @@ class SignIn extends StatelessWidget {
                         Center(
                           child: RichText(
                               text: TextSpan(children: [
-                                TextSpan(
-                                    text: 'd',
-                                    style: TextStyle(
-                                      color: Colors.orangeAccent,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: 'ev',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: 'rnz',
-                                    style: TextStyle(
-                                      color: Colors.orangeAccent,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                              ])),
+                            TextSpan(
+                                text: 'd',
+                                style: TextStyle(
+                                  color: Colors.orangeAccent,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            TextSpan(
+                                text: 'ev',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            TextSpan(
+                                text: 'rnz',
+                                style: TextStyle(
+                                  color: Colors.orangeAccent,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ])),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 38),
@@ -181,7 +181,7 @@ class SignIn extends StatelessWidget {
                             decoration: BoxDecoration(
                                 color: Colors.blue.shade900.withOpacity(0.6),
                                 borderRadius:
-                                BorderRadius.only(topLeft: Radius.circular(4), bottomLeft: Radius.circular(4))),
+                                    BorderRadius.only(topLeft: Radius.circular(4), bottomLeft: Radius.circular(4))),
                             child: Center(
                               child: Text(
                                 'f',
@@ -240,6 +240,6 @@ class SignIn extends StatelessWidget {
   }
 
   void _navigateToSignUp(BuildContext context) {
-    Navigator.pushReplacementNamed(context, "/SignUp");
+    Navigator.pushReplacementNamed(context, SIGN_UP);
   }
 }

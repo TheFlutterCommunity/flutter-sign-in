@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splash_signin/widgets/curve_painter.dart';
+import 'package:flutter_sign_in/routes/routes.dart';
+import 'package:flutter_sign_in/widgets/curve_painter.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -7,7 +8,6 @@ class SignUp extends StatelessWidget {
     // double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-
       body: Stack(
         children: [
           CustomPaint(
@@ -29,35 +29,34 @@ class SignUp extends StatelessWidget {
                         Center(
                           child: RichText(
                               text: TextSpan(children: [
-                                TextSpan(
-                                    text: 'd',
-                                    style: TextStyle(
-                                      color: Colors.orangeAccent,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: 'ev',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: 'rnz',
-                                    style: TextStyle(
-                                      color: Colors.orangeAccent,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                              ])),
+                            TextSpan(
+                                text: 'd',
+                                style: TextStyle(
+                                  color: Colors.orangeAccent,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            TextSpan(
+                                text: 'ev',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            TextSpan(
+                                text: 'rnz',
+                                style: TextStyle(
+                                  color: Colors.orangeAccent,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ])),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 38),
                           child: Text(
                             'devrnz designs',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
@@ -83,8 +82,7 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Username',
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                          borderSide: BorderSide.none),
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)), borderSide: BorderSide.none),
                       filled: true,
                       fillColor: Colors.grey[100],
                     ),
@@ -109,8 +107,7 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Email Id',
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                          borderSide: BorderSide.none),
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)), borderSide: BorderSide.none),
                       filled: true,
                       fillColor: Colors.grey[100],
                     ),
@@ -136,8 +133,7 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Password',
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                          borderSide: BorderSide.none),
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)), borderSide: BorderSide.none),
                       filled: true,
                       fillColor: Colors.grey[100],
                     ),
@@ -150,10 +146,7 @@ class SignUp extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         'Register Now',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700),
+                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700),
                       ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(4),
@@ -198,6 +191,6 @@ class SignUp extends StatelessWidget {
   }
 
   void _loginPage(BuildContext context) {
-    Navigator.pushReplacementNamed(context, "/SignIn");
+    Navigator.pushReplacementNamed(context, SIGN_IN);
   }
 }

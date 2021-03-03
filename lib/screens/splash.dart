@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_sign_in/routes/routes.dart';
 //import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void navigate() {
-    Navigator.pushReplacementNamed(context, "/Select");
+    Navigator.pushReplacementNamed(context, HOME);
   }
 
   startTime() async {
@@ -33,20 +34,17 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(top: 60,bottom: 40)),
+          Padding(padding: EdgeInsets.only(top: 60, bottom: 40)),
           Center(
-           child: Text('Hello there!',
-            style: TextStyle(fontSize: 30),
-           ),
-
+            child: Text(
+              'Hello there!',
+              style: TextStyle(fontSize: 30),
+            ),
           ),
           Padding(padding: EdgeInsets.only(top: 150)),
           CircularProgressIndicator(),
         ],
       ),
-
     );
-
-
   }
 }

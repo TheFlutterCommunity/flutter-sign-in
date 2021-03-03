@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sign_in/routes/routes.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _HomeState extends State<Home> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
         height: height,
         width: width,
         decoration: BoxDecoration(
@@ -60,7 +61,6 @@ class _HomeState extends State<Home> {
             GestureDetector(
               child: Container(
                 height: 40,
-                width: 365,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(4.0),
@@ -68,22 +68,18 @@ class _HomeState extends State<Home> {
                 child: Center(
                   child: Text(
                     'Login ',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, color: Colors.orange, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               onTap: () {
-                Navigator.pushNamed(context, "/SignIn");
+                Navigator.pushNamed(context, SIGN_IN);
               },
             ),
             Padding(padding: EdgeInsets.only(top: 20)),
             GestureDetector(
               child: Container(
                 height: 40,
-                width: 365,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(4),
@@ -91,19 +87,16 @@ class _HomeState extends State<Home> {
                 child: Center(
                   child: Text(
                     'Register Now ',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, color: Colors.orange, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               onTap: () {
-                Navigator.pushNamed(context, "/SignUp");
+                Navigator.pushNamed(context, SIGN_UP);
               },
             ),
-            Padding(padding: EdgeInsets.only(top: 30)),
-            FlatButton(
+            Padding(padding: EdgeInsets.only(top: 20)),
+            TextButton(
                 onPressed: () {
                   // Navigator.pushReplacementNamed(context, "/SignUp");
                 },
@@ -111,7 +104,7 @@ class _HomeState extends State<Home> {
                   'Quick login with Touch ID',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 )),
-            Padding(padding: EdgeInsets.only(top: 30)),
+            Padding(padding: EdgeInsets.only(top: 20)),
             Icon(
               Icons.fingerprint,
               size: 100,

@@ -12,39 +12,59 @@ class _HomeState extends State<Home> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.all(10),
         height: height,
         width: width,
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [Colors.orange.shade300, Colors.orange.shade800],
+                colors: [Colors.orange.shade200, Colors.orange.shade800],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight)),
         child: Column(
           children: [
             Padding(padding: EdgeInsets.only(top: 170)),
-            Container(
+            Center(
+              child: RichText(
+                  text: TextSpan(children: [
+                TextSpan(
+                    text: 'd',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    )),
+                TextSpan(
+                    text: 'ev',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    )),
+                TextSpan(
+                    text: 'rnz',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ])),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 38),
               child: Text(
-                'devrnz',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                ),
+                'devrnz designs',
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-              child: Text(
-                '               devrnz designs',
-                style: TextStyle(
-                  fontSize: 13,
-                ),
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 80)),
+            Padding(padding: EdgeInsets.only(top: 70)),
             GestureDetector(
               child: Container(
                 height: 40,
                 width: 365,
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
                 child: Center(
                   child: Text(
                     'Login ',
@@ -64,7 +84,10 @@ class _HomeState extends State<Home> {
               child: Container(
                 height: 40,
                 width: 365,
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
                 child: Center(
                   child: Text(
                     'Register Now ',
@@ -99,6 +122,7 @@ class _HomeState extends State<Home> {
               'Use Touch ID',
               style: TextStyle(
                 color: Colors.white,
+                decoration: TextDecoration.underline,
               ),
             ),
           ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sign_in/widgets/header.dart';
+
+import 'header.dart';
+
 
 class CurvePainter extends CustomPainter{
   @override

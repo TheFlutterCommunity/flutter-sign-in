@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sign_in/screens/dashboard.dart';
-import 'package:flutter_sign_in/screens/home.dart';
-import 'package:flutter_sign_in/screens/sign_in.dart';
-import 'package:flutter_sign_in/screens/sign_up.dart';
+import 'package:flutter_splash_signin/screens/dashboard.dart';
+import 'package:flutter_splash_signin/screens/home.dart';
+import 'package:flutter_splash_signin/screens/sign_in.dart';
+import 'package:flutter_splash_signin/screens/sign_up.dart';
 
 import 'screens/splash.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Splash App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
-      home: SplashScreen(),
+      home: Home(),
       routes: <String, WidgetBuilder>{
         "/SignIn": (BuildContext context) => SignIn(),
         "/SignUp": (BuildContext context) => SignUp(),

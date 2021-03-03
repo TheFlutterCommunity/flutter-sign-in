@@ -1,177 +1,203 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_splash_signin/widgets/curve_painter.dart';
 
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    // double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(' Back'),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          height: height,
-          width: width,
-          child: Column(
-            children: [
-              Container(
-                height: 230,
-                width: 450,
-                child: Column(
-                  children: [
-                    Padding(padding: EdgeInsets.only(top: 80)),
-                    Text(
-                      'devrnz',
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '               devrnz designs',
-                      style: TextStyle(
-                        fontSize: 13,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                height: 500,
-                width: 450,
-                child: Column(
-                  children: [
-                    Container(
-                      child: Text(
-                        'Username',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      padding: EdgeInsets.only(right: 320),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    TextFormField(
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Enter Username';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'frank',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Container(
-                      child: Text(
-                        'Email id',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      padding: EdgeInsets.only(right: 325),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    TextFormField(
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Enter Email';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'frankrnz@gmail.com',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Container(
-                      child: Text(
-                        'Password',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      padding: EdgeInsets.only(right: 320),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    TextFormField(
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Enter Password';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: '*************',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 20)),
-                    GestureDetector(
-                      child: Container(
-                        height: 50,
-                        width: 420,
-                        child: Center(
-                            child: Text(
-                          'Register Now',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        )),
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [Colors.orangeAccent, Colors.orange],
-                                begin: Alignment.topLeft,
-                                end: Alignment.topRight)),
-                      ),
-                      onTap: () {},
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 45)),
-                    Row(
+
+      body: Stack(
+        children: [
+          CustomPaint(
+            child: Container(
+              height: 150,
+            ),
+            painter: CurvePainter(),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 140),
+                    child: Column(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 85)),
-                        Text(
-                          "Already have an account ?",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                        Center(
+                          child: RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: 'd',
+                                    style: TextStyle(
+                                      color: Colors.orangeAccent,
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                TextSpan(
+                                    text: 'ev',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                TextSpan(
+                                    text: 'rnz',
+                                    style: TextStyle(
+                                      color: Colors.orangeAccent,
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                              ])),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 38),
+                          child: Text(
+                            'devrnz designs',
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                         ),
-                        FlatButton(
-                            onPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, "/SignIn");
-                            },
-                            child: Text(
-                              'Login',
-                              style: TextStyle(color: Colors.orange),
-                            )),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20)),
+                  Text(
+                    'Username',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87.withOpacity(0.7),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  TextFormField(
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Enter Username';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Username',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 12)),
+                  Text(
+                    'Email id',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87.withOpacity(0.7),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  TextFormField(
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Enter Email Id';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Email Id',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 12)),
+                  Text(
+                    'Password',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87.withOpacity(0.7),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  TextFormField(
+                    obscureText: true,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Enter Password';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20)),
+                  GestureDetector(
+                    child: Container(
+                      height: 40,
+                      width: width,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Register Now',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          gradient: LinearGradient(
+                              colors: [Colors.orange.shade300, Colors.orange],
+                              begin: Alignment.topLeft,
+                              end: Alignment.topRight)),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/Dashboard');
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 75)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Already have an account ?",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black87.withOpacity(0.7).withOpacity(0.7),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            _loginPage(context);
+                          },
+                          child: Text(
+                            'Login',
+                            style: TextStyle(color: Colors.orange),
+                          )),
+                    ],
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
+  }
+
+  void _loginPage(BuildContext context) {
+    Navigator.pushReplacementNamed(context, "/SignIn");
   }
 }

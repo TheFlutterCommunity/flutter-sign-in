@@ -5,10 +5,8 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          'Hello there!',
-          style: TextStyle(fontSize: 30),
-        ),
+        child: Text('Hello there!',
+        style: TextStyle(fontSize: 30),),
       ),
     );
   }
